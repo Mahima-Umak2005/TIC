@@ -1,18 +1,19 @@
 /* Ultra-Modern Cyberpunk-Inspired CSS - Enhanced Version */
 :root {
-  --neon-primary: #ffd700; /* Golden */
-  --neon-secondary: #c0c0c0; /* Silver */
+  --neon-primary: #0ff0fc;
+  --neon-secondary: #ff00ff;
   --cyber-dark: #00081d;
-  --hologram-blue: rgba(255, 215, 0, 0.15); /* Golden glow */
+  --hologram-blue: rgba(0, 136, 255, 0.15);
   --matrix-green: #00ff9d;
+  --cyberpunk-yellow: #ffe600;
   --cyber-gradient: linear-gradient(
     45deg,
     var(--neon-primary),
     var(--neon-secondary),
     var(--matrix-green)
   );
-  --cyber-highlight: #ffd700; /* Adjusted from pink to gold */
-  --cyber-purple: #c0c0c0; /* Silver tone */
+  --cyber-highlight: #fe53bb;
+  --cyber-purple: #7700ff;
   --cyber-red: #ff3c5f;
 }
 
@@ -35,99 +36,9 @@ body {
   line-height: 1.8;
   overflow-x: hidden;
   perspective: 1000px;
+  /* NEW: Subtle particles */
   position: relative;
 }
-
-/* Centered glitch text with golden glow */
-.glitch-text {
-  animation: text-glitch 2.5s infinite;
-  position: relative;
-  display: inline-block;
-  text-align: center;
-  text-shadow: 
-    0 0 4px var(--neon-primary), 
-    0 0 8px var(--neon-primary), 
-    0 0 16px var(--neon-secondary),
-    0 0 24px var(--neon-secondary);
-}
-
-/* Section layout styling */
-.sot-section {
-  position: relative;
-  padding: 8rem 0;
-  background: rgba(0, 8, 29, 0.7);
-  border: 1px solid var(--neon-primary);
-  margin: 4rem 0;
-  box-shadow: 
-    0 0 40px var(--hologram-blue), 
-    0 0 20px var(--neon-primary);
-  clip-path: polygon(0 3%, 100% 0, 98% 97%, 2% 100%);
-  transform: perspective(1000px) rotateX(1deg);
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  overflow: hidden;
-  z-index: 1;
-}
-
-.sot-section:hover {
-  transform: perspective(1000px) rotateX(-1deg) translateY(-10px) scale(1.02);
-  box-shadow: 
-    0 0 80px var(--hologram-blue), 
-    0 0 40px var(--neon-primary);
-}
-
-/* Button styling */
-.sot-btn {
-  position: relative;
-  padding: 1.5rem 3rem;
-  background: none;
-  border: 2px solid var(--neon-primary);
-  color: var(--neon-primary);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.3rem;
-  overflow: hidden;
-  transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  clip-path: polygon(12% 0, 100% 0, 88% 100%, 0% 100%);
-  z-index: 1;
-  transform-style: preserve-3d;
-  transform: perspective(1000px) translateZ(0);
-  text-shadow: 0 0 5px var(--neon-primary);
-}
-
-.sot-btn:hover {
-  color: var(--cyber-dark);
-  border-color: transparent;
-  transform: perspective(1000px) translateZ(10px);
-  text-shadow: none;
-  box-shadow: 
-    0 0 20px rgba(255, 215, 0, 0.4), 
-    0 0 30px rgba(255, 215, 0, 0.2);
-}
-
-/* Matrix-style text centered and glowing */
-.matrix-text {
-  font-family: 'Courier New', monospace;
-  color: var(--matrix-green);
-  text-shadow: 
-    0 0 4px var(--matrix-green), 
-    0 0 10px var(--neon-secondary);
-  position: relative;
-  text-align: center;
-  display: block;
-}
-
-/* Highlight effect with golden/silver glow */
-.cyber-highlight {
-  position: relative;
-  display: inline-block;
-  color: #fff;
-  padding: 0 5px;
-  z-index: 1;
-  text-shadow: 
-    0 0 10px var(--neon-primary), 
-    0 0 20px var(--neon-secondary);
-}
-
 
 /* Enhanced Glitch Text Effect */
 @keyframes text-glitch {
