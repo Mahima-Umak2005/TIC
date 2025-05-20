@@ -559,9 +559,9 @@ body::before {
 }
 
 .sot-logo {
-  height: 40px;
-  width: auto;
-  margin-top: 0px;
+  width: 80px;
+  height: 70px;
+  margin-top: 50px;
 }
 
 /* Nav Links Container */
@@ -1378,9 +1378,4 @@ h3 {
   .sot-btn {
     padding: 1rem 2rem;
   }
-}
-.w3-col m6 img{
-  height: 20px;
-  width: 20px;
-
 }
