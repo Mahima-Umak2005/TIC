@@ -1,10 +1,20 @@
+
+.image-container img {
+  width: 200px;
+  height: auto;
+  border-radius: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+
 /* Ultra-Modern Cyberpunk-Inspired CSS - Enhanced Version */
 :root {
-  --neon-primary: #0ff0fc;
-  --neon-secondary: #ff00ff;
-  --cyber-dark: #00081d;
-  --hologram-blue: rgba(0, 136, 255, 0.15);
-  --matrix-green: #00ff9d;
+  --neon-primary: #FFD700;
+  --neon-secondary: #C0C0C0;
+  --cyber-dark: #000000;
+  --hologram-blue: rgba(30, 144, 255, 0.15);
+  --matrix-green: #C0C0C0;
   --cyberpunk-yellow: #ffe600;
   --cyber-gradient: linear-gradient(
     45deg,
@@ -12,9 +22,9 @@
     var(--neon-secondary),
     var(--matrix-green)
   );
-  --cyber-highlight: #fe53bb;
-  --cyber-purple: #7700ff;
-  --cyber-red: #ff3c5f;
+  --cyber-highlight: #1E90FF;
+  --cyber-purple: #1E90FF;
+  --cyber-red: #FFD700;
 }
 
 @font-face {
@@ -475,60 +485,124 @@ body::before {
   box-shadow: 0 0 60px rgba(0, 136, 255, 0.3);
 }
 
-.topnav {
-  display: flex !important;
-  align-items: center !important;
-  gap: 2.5rem !important;
-  margin: 0 auto !important;
+/* Container */
+.topnav.sot-header {
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+  background-color: #111; /* dark bg, customize as needed */
   position: relative;
   transform-style: preserve-3d;
+  height: 60px;
+  gap: 1rem;
 }
 
-.topnav a {
+/* Logo Link */
+.topnav.sot-header > a.active {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.sot-logo {
+  height: 40px;
+  width: auto;
+}
+
+/* Nav Links Container */
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  flex-grow: 1; /* takes available space between logo and login */
+  margin-left: 2rem;
+}
+
+/* Nav Links */
+.nav-links a {
   position: relative;
-  padding: 1rem 2rem;
-  transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  color: white;
+  text-decoration: none;
+  padding: 1rem 0;
+  font-weight: 500;
+  transition: color 0.3s ease;
   transform-style: preserve-3d;
   transform: translateZ(0);
 }
 
-.topnav a:hover {
-  transform: translateZ(10px) scale(1.05);
+.nav-links a:hover {
+  color: var(--neon-primary);
   text-shadow: 0 0 10px var(--neon-primary);
+  transform: translateZ(10px) scale(1.05);
 }
 
-.topnav a::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 3px;
-  background: var(--cyber-gradient);
-  transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transform: translateZ(-5px);
+/* Login Button */
+.sot-btn {
+  position: relative;
+  padding: 0.75rem 1.75rem;
+  background: var(--neon-primary);
+  color: #111;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
+  transform-style: preserve-3d;
+  transform: translateZ(0);
+  margin-left: auto; /* pushes login to far right */
 }
 
-.topnav a:hover::before {
+.sot-btn:hover {
+  background: #00fff7;
+  transform: translateZ(10px) scale(1.05);
+  box-shadow: 0 0 15px var(--neon-primary);
+}
+
+/* Hamburger Icon - hidden on large screens */
+.icon {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+/* Responsive: show hamburger, hide nav-links and login on small screens */
+@media screen and (max-width: 768px) {
+  .nav-links,
+  .sot-btn {
+    display: none;
+  }
+  .icon {
+    display: block;
+  }
+}
+
+/* Optional: When nav is toggled open (add class 'responsive' on #myTopnav) */
+.topnav.responsive .nav-links,
+.topnav.responsive .sot-btn {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-}
-
-/* NEW: Nav Items Glow Effect */
-.topnav a::after {
-  content: '';
+  background: #111;
   position: absolute;
-  bottom: -2px;
+  top: 60px;
   left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #0ff0fc, #ff00ff);
-  transition: width 0.3s ease;
-  box-shadow: 0 0 10px var(--neon-primary);
+  padding: 1rem 0;
+  gap: 1rem;
+  z-index: 99;
 }
 
-.topnav a:hover::after {
-  width: 100%;
+.topnav.responsive .nav-links a,
+.topnav.responsive .sot-btn {
+  padding: 0.75rem 1.5rem;
 }
+
+/* Optional styling for logo in responsive mode */
+.topnav.responsive > a.active {
+  padding: 0.75rem 1.5rem;
+}
+
 
 .active-nav {
   color: var(--neon-primary) !important;
@@ -560,15 +634,14 @@ h1, h2, h3 {
 }
 
 h1::before, h2::before, h3::before {
-  content: attr(data-text);
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  color: var(--cyber-highlight);
-  text-shadow: none;
-  filter: blur(1px);
-  z-index: -1;
+  content: '';
+  display: none;
 }
+h1, h2, h3 {
+  text-shadow: 0 0 10px var(--neon-primary);
+  text-align: center;
+}
+
 
 /* NEW: Animated Background Gradient */
 .gradient-bg {

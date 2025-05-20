@@ -281,8 +281,21 @@ document.addEventListener('DOMContentLoaded', () => {
     header.setAttribute('data-text', header.textContent);
   });
   
-  // Add gradient background
+  
+});
+
+
+// Centered Gradient Background for Section Headings Only
+document.querySelectorAll('.sot-section h2, .sot-section h1').forEach(heading => {
   const gradientBg = document.createElement('div');
   gradientBg.classList.add('gradient-bg');
-  document.body.appendChild(gradientBg);
+  gradientBg.style.position = 'absolute';
+  gradientBg.style.top = '50%';
+  gradientBg.style.left = '50%';
+  gradientBg.style.transform = 'translate(-50%, -50%)';
+  gradientBg.style.width = '120%';
+  gradientBg.style.height = '120%';
+  gradientBg.style.zIndex = '-1';
+  heading.style.position = 'relative';
+  heading.appendChild(gradientBg);
 });
