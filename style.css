@@ -547,7 +547,7 @@ body::before {
   background-color: #111; /* dark bg, customize as needed */
   position: relative;
   transform-style: preserve-3d;
-  height: 60px;
+  height: 90px;
   gap: 1rem;
 }
 
