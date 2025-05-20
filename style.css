@@ -665,6 +665,8 @@ body::before {
 
 /* Logo Enhancements */
 .sot-logo {
+  width: auto;
+  margin-bottom: 50px;
   height: 50px !important;
   margin-right: auto !important;
   filter: drop-shadow(0 0 8px #0ff0fc) !important;
