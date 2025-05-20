@@ -561,7 +561,7 @@ body::before {
 .sot-logo {
   height: 70px;
   width: auto;
-  margin-top: 50px;
+  margin-top: 0px;
 }
 
 /* Nav Links Container */
@@ -665,8 +665,6 @@ body::before {
 
 /* Logo Enhancements */
 .sot-logo {
-  width: auto;
-  margin-bottom: 50px;
   height: 50px !important;
   margin-right: auto !important;
   filter: drop-shadow(0 0 8px #0ff0fc) !important;
