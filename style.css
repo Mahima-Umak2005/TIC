@@ -560,12 +560,8 @@ body::before {
 
 .sot-logo {
   height: 70px;
-<<<<<<< HEAD
   width: auto;
   margin-top: 50px;
-=======
-  margin-top: 0px;
->>>>>>> 9f8cacbb4f4e083a9fd77e7be7f983dbc4ef57c1
 }
 
 /* Nav Links Container */
@@ -659,7 +655,7 @@ body::before {
 
 /* Optional styling for logo in responsive mode */
 .topnav.responsive > a.active {
-  padding: 0.75rem 1.5rem;
+  padding: 0rem 1.5rem;
 }
 
 .active-nav {
