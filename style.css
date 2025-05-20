@@ -560,8 +560,12 @@ body::before {
 
 .sot-logo {
   height: 70px;
+<<<<<<< HEAD
   width: auto;
   margin-top: 50px;
+=======
+  margin-top: 0px;
+>>>>>>> 9f8cacbb4f4e083a9fd77e7be7f983dbc4ef57c1
 }
 
 /* Nav Links Container */
